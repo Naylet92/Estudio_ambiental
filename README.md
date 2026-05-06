@@ -19,3 +19,7 @@ Nomenclatura de archivos (AAA - código de área):
 * **AAA_plantilla.ipynb** - plantilla con definiciones de areas y poligonos
 * **AAA_L_20XX.ipynb** - seleccion y preprocesamienot de datos Landsat según fecha
 * **AAA_L_indices_20XX.ipynb** - generación de los indices de vegetación y transformaciones lineales estándares (Tasseled Cap)
+
+
+Archivos auxiliares (sin relación con áreas de estudio):
+* **Delimitación_del_Área_de_Tapalpa.ipynb** - ensayo sobre la dinamica temporal del índice NDVI
