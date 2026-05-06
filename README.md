@@ -5,7 +5,7 @@ Códigos de áreas (nomenclatura de préfijos):
 * **NCL** - Nevado de Colima
 * **SGB** - San Gabriel
 * **CHM** - Chamela
-* **PPR** - Púnta Perula
+* **PPR** - Punta Perula
 * **QUI** - Sierra de Quila
 * **SVE** - Sierra Verde
 
