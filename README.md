@@ -4,10 +4,10 @@ En este repositorio aparece el paso a paso del procesamiento de imágenes para r
 Códigos de áreas (nomenclatura de préfijos):
 * **NCL** - Nevado de Colima
 * **SGB** - San Gabriel
-* **CHM** - Chamela
-* **PPR** - Punta Perula
-* **QUI** - Sierra de Quila
-* **SVE** - Sierra Verde
+* **CML** - Chamela
+* **PRL** - Punta Perula
+* **QLA** - Sierra de Quila
+* **SVD** - Sierra Verde
 
 Tipos de archivos:
 * **.ipynb** - Jupiter notebook con codigo de Python ejecutable, comentarios y resultados, formato de Google Colab
