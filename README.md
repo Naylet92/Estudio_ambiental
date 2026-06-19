@@ -13,7 +13,9 @@ En este repositorio aparece el paso a paso del procesamiento de imágenes para r
 * **.ipynb** - Jupiter notebook con codigo de Python ejecutable, comentarios y resultados, formato de Google Colab
 * **.md** - Markdown, archivos de comentarios
 * **.tif** - formato raster GeoTIFF
+
 **Nota:** en los archivos .ipynb se recomienda no incluir los resultados de visualización interactiva de mapas (widgets), debido a errores de visualización en GitHub que suelen ocurrir en caso de incluir los widgets
+
 **Nota:** Al reubicar el archivo en otra carpeta en GitHub o renombrar, para posibilidad de abrirlo en Colab sin necesidad de una descarga manual a Google Drive se requiere actualizar la ruta en Colba Bage en la parte superior del archivo .ipynb
 
 ### Nomenclatura de archivos (AAA - código de área):
