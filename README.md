@@ -23,6 +23,7 @@ En este repositorio aparece el paso a paso del procesamiento de imágenes para r
 * **AAA_L_20XX.ipynb** - seleccion y preprocesamienot de datos Landsat por fecha
 * **AAA_L_indices_20XX.ipynb** - generación de los indices de vegetación y transformaciones lineales estándares (Tasseled Cap)
 * **AAA_NDVI_Graficas.ipynb** - generación de graficas de dinamica mensual de NDVI en 4 periodos 2000-2005, 2005-2010, 2010-2015, 2015-2020 en las zonas de muestreo. Proposito es presentr el comportamiento del índice a lo largo de tiempo en el contexto distintos tipos de cobertura de suelo y demostrar compatibilidad de valores calculados con los fuentes heterogeneos (L5, L7, L8, L9)
+* **AAA_20XX_construir_numpy_8capas.ipynb** - script para tomar los GeoTIFFs de la temporada seca y humeda del año, realizar normalización de las capas de predictores (aplicando Standard Scaler y Robust Scaler), construir un paquete de 8 capas, realizar analisis PCA con ellos y guardar un conjunto de 6 componentes como Numpy array
 
 ### Archivos auxiliares (sin relación con áreas de estudio elegidos):
 * **Delimitación_del_Área_de_Tapalpa.ipynb** - ensayo preliminar sobre la dinamica temporal del índice NDVI
