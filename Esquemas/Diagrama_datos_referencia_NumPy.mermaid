@@ -1,0 +1,6 @@
+flowchart TD
+    A[GeoTIFFs Categóricos de Referencia: ref_CP, ref_EC, ref_DW, ref_Ray] --> B[Lectura de metadatos con rasterio: CRS, Transform, Shape]
+    B --> C[Inspección de frecuencias de clases por banda]
+    C --> D[Conversión de datos a arrays NumPy uint8]
+    D --> E[Tratamiento de valores NoData/NaN a 0]
+    E --> F[Guardar datos de referencia en formato .npy]
