@@ -1,0 +1,41 @@
+flowchart TD
+    subgraph FASE1 ["Fase 1: Preparación de Datos de Entrada (PCA Multi-temporal)"]
+        A1[GeoTIFFs 2000: Seca y Húmeda] --> B1[SGB_2000_construir_numpy_8capas.ipynb]
+        A2[GeoTIFFs 2010: Seca y Húmeda] --> B2[SGB_2010_construir_numpy_8capas.ipynb]
+        A3[GeoTIFFs 2020: Seca y Húmeda] --> B3[SGB_2020_construir_numpy_8capas.ipynb]
+        
+        B1 --> C1[SGB_2000_L7_PCA6_ss.npy]
+        B2 --> C2[SGB_2010_L7_PCA6_ss.npy]
+        B3 --> C3[SGB_2020_L8_PCA6_ss.npy]
+    end
+
+    subgraph FASE2 ["Fase 2: Preparación de Etiquetas de Referencia (2020)"]
+        D1[GeoTIFFs Referencia 2020: ref_DW / ref_Ray] --> E1[SGB_capas_entrenamiento_numpy_ver2.ipynb]
+        E1 --> F1[SGB_2020_ref_DW.npy / SGB_2020_ref_Ray.npy]
+    end
+
+    subgraph FASE3 ["Fase 3: Entrenamiento ANN 2020 e Inferencia Temporal"]
+        C3 --> G1[SGB_clasificacion_ANN_2020_ver3.ipynb]
+        F1 --> G1
+        
+        G1 --> H1[Aplanar datos con feature_transform y limpiar NaNs]
+        H1 --> H2[Entrenar Modelo ANN TensorFlow/Keras con Datos 2020]
+        
+        H2 --> I1[Inferencia sobre PCA 2020] --> J1[2020_SGB_ANN_prediction.npy]
+        H2 --> I2[Inferencia sobre PCA 2010] --> J2[2010_SGB_ANN_prediction.npy]
+        H2 --> I3[Inferencia sobre PCA 2000] --> J3[2000_SGB_ANN_prediction.npy]
+    end
+
+    subgraph FASE4 ["Fase 4: Georreferenciación y Exportación Ráster GeoTIFF"]
+        K1[GeoTIFF Plantilla Referencia: SGB_2020_L8_seca.tif] --> L1[SGB_guardar_numpy_en_geotiff.ipynb]
+        J1 --> L1
+        J2 --> L1
+        J3 --> L1
+        
+        L1 --> M1[Extraer Transformación Afín y Proyección WKT con GDAL]
+        M1 --> N1[Asignar NoData int32 y Escribir Rásters]
+        
+        N1 --> O1[2020_SGB_ANN_prediction.tif]
+        N1 --> O2[2010_SGB_ANN_prediction.tif]
+        N1 --> O3[2000_SGB_ANN_prediction.tif]
+    end
