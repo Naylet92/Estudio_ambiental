@@ -1,0 +1,9 @@
+flowchart TD
+    A[Cargar imágenes PCA6 .npy y referencia .npy] --> B[Transformar arreglos 3D/2D a matriz tabular: feature_transform]
+    B --> C[Filtrar filas con valores NaN en entradas o etiquetas]
+    C --> D[División de datos: train_test_split]
+    D --> E[Definir arquitectura ANN en Keras: Flatten + 3 capas Dense ReLU + Softmax]
+    E --> F[Compilar modelo: Adam, sparse_categorical_crossentropy]
+    F --> G[Entrenamiento del modelo: 15 épocas, batch_size=32, validation_split=0.2]
+    G --> H[Inferencia sobre la cuadrícula completa de la imagen]
+    H --> I[Guardar mapa de predicción categórico en formato .npy]
