@@ -1,0 +1,11 @@
+flowchart TD
+    A[Archivos GeoTIFF: NDVI, TC_Brightness, TC_Greenness, TC_Wetness] -->|Temporada Seca y Húmeda| B[Función leer_tif_a_array]
+    B --> C[Concatenar bandas: Array de 8 capas por sensor]
+    C --> D[Crear máscara de píxeles válidos: mask_valida]
+    D --> E1[Aplicar RobustScaler en píxeles válidos]
+    D --> E2[Aplicar StandardScaler en píxeles válidos]
+    E1 --> F1[Guardar arrays escalados .npy y orden .json]
+    E2 --> F2[Guardar arrays escalados .npy y orden .json]
+    E1 --> G[Ajustar PCA con 6 componentes en datos escalados]
+    G --> H[Transformar datos y reconstruir dimensiones 6, H, W]
+    H --> I[Guardar resultados PCA .npy y máscara de datos válidos]
