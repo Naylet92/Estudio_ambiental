@@ -1,0 +1,7 @@
+flowchart TD
+    A[Cargar arrays predichos .npy: ANN_prediction.npy] --> B[Abrir GeoTIFF de referencia con GDAL]
+    B --> C[Extraer matriz de geotransformación y proyección WKT]
+    C --> D[Función write_geotiff: Reemplazar NaN por no_data_val int32]
+    D --> E[Crear driver GTiff en GDAL con tipo GDT_Int32]
+    E --> F[Escribir bandas y asignar sistema de coordenadas]
+    F --> G[Guardar mapa categórico final en GeoTIFF .tif]
